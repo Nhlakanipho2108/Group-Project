@@ -1,5 +1,365 @@
-:root{
---Party-pink: #ffasd6
---Cream: #ffd6ee
-  
+/* =========================
+   ROOT COLORS
+========================= */
+:root {
+    --primary: #6d5dfc;
+    --primary-dark: #5747f5;
+    --primary-light: #c8c1ff;
+
+    --accent-pink: #ff7eb3;
+    --accent-blue: #5ac8fa;
+
+    --background: #f7f8fc;
+    --surface: #ffffff;
+
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+
+    --success: #10b981;
+
+    --border: #e5e7eb;
+    --shadow: rgba(109, 93, 252, 0.15);
+
+    --gradient: linear-gradient(
+        135deg,
+        #6d5dfc 0%,
+        #8b7fff 50%,
+        #ff7eb3 100%
+    );
+}
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background);
+    color: var(--text-dark);
+    line-height: 1.7;
+}
+
+/* =========================
+   HEADER & NAVIGATION
+========================= */
+header {
+    background: rgba(109, 93, 252, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 20px var(--shadow);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+nav h1 {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffe6f3;
+}
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 5rem 2rem;
+}
+
+section h2 {
+    color: var(--primary);
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+section p,
+section li {
+    color: var(--text-light);
+    margin-bottom: 0.8rem;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+#home {
+    background: var(--gradient);
+    color: white;
+    text-align: center;
+    padding: 7rem 2rem;
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 10px 30px var(--shadow);
+}
+
+#home h2 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+#home p {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    color: rgba(255,255,255,0.95);
+    font-size: 1.1rem;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+button,
+.btn,
+article a {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover,
+.btn:hover,
+article a:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px var(--shadow);
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+#about {
+    background: var(--surface);
+    border-radius: 20px;
+    padding: 3rem;
+    margin-top: 3rem;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+}
+
+/* =========================
+   OPPORTUNITIES SECTION
+========================= */
+#opportunities ul {
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+article {
+    background: white;
+    padding: 2rem;
+    margin-top: 1.5rem;
+    border-radius: 20px;
+    border-left: 5px solid var(--primary);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+article:hover {
+    transform: translateY(-5px);
+}
+
+article h3 {
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+}
+
+/* =========================
+   FORM SECTION
+========================= */
+form {
+    background: var(--surface);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+form div {
+    margin-bottom: 1.25rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-size: 1rem;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(109, 93, 252, 0.15);
+}
+
+/* =========================
+   CARDS (OPTIONAL)
+========================= */
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background: #1f2937;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+footer a {
+    color: var(--primary-light);
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: 0.3s ease;
+}
+
+footer a:hover {
+    color: white;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section,
+article,
+form {
+    animation: fadeIn 0.6s ease;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    #home {
+        padding: 5rem 1.5rem;
+    }
+
+    #home h2 {
+        font-size: 2.2rem;
+    }
+
+    section {
+        padding: 4rem 1.5rem;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+    }
+
+    form,
+    article,
+    #about {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    #home h2 {
+        font-size: 1.8rem;
+    }
+
+    nav h1 {
+        font-size: 1.5rem;
+    }
+
+    button,
+    .btn,
+    article a {
+        width: 100%;
+        text-align: center;
+    }
 }
