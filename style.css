@@ -1,365 +1,208 @@
 /* =========================
-   ROOT COLORS
+
+   ROOT (PINK THEME)
 ========================= */
 :root {
-    --primary: #6d5dfc;
-    --primary-dark: #5747f5;
-    --primary-light: #c8c1ff;
+    --pink-main: #ff7eb3;
+    --pink-soft: #ffc1dd;
+    --pink-light: #ffe4f0;
+    --purple: #8b7fff;
 
-    --accent-pink: #ff7eb3;
-    --accent-blue: #5ac8fa;
-
-    --background: #f7f8fc;
-    --surface: #ffffff;
-
-    --text-dark: #1f2937;
+    --text-dark: #2a2a2a;
     --text-light: #6b7280;
 
-    --success: #10b981;
+    --glass: rgba(255, 255, 255, 0.4);
+    --shadow: rgba(255, 126, 179, 0.25);
 
-    --border: #e5e7eb;
-    --shadow: rgba(109, 93, 252, 0.15);
-
-    --gradient: linear-gradient(
-        135deg,
-        #6d5dfc 0%,
-        #8b7fff 50%,
-        #ff7eb3 100%
-    );
+    --gradient: linear-gradient(135deg, #ff7eb3, #8b7fff);
 }
 
-/* =========================
-   GLOBAL STYLES
-========================= */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--background);
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(to bottom, #fff0f6, #fdfbff);
     color: var(--text-dark);
-    line-height: 1.7;
 }
 
-/* =========================
-   HEADER & NAVIGATION
-========================= */
+/* NAVBAR */
 header {
-    background: rgba(109, 93, 252, 0.95);
-    backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
-    z-index: 1000;
+    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.6);
     padding: 1rem 2rem;
-    box-shadow: 0 4px 20px var(--shadow);
+    z-index: 1000;
 }
 
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    max-width: 1200px;
-    margin: auto;
+    gap: 3rem;
 }
 
 nav h1 {
-    color: white;
-    font-size: 1.8rem;
-    font-weight: 700;
+    background: var(--gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: 800;
 }
 
 nav ul {
     display: flex;
+    gap: 1.5rem;
     list-style: none;
-    gap: 2rem;
+    margin: 0;
+    padding: 0;
 }
 
 nav a {
     text-decoration: none;
-    color: white;
+    color: var(--text-dark);
     font-weight: 600;
-    transition: all 0.3s ease;
+    position: relative;
 }
 
-nav a:hover {
-    color: #ffe6f3;
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: var(--pink-main);
+    left: 0;
+    bottom: -4px;
+    transition: 0.3s;
 }
 
-/* =========================
-   GENERAL SECTIONS
-========================= */
-section {
-    max-width: 1100px;
-    margin: auto;
-    padding: 5rem 2rem;
+nav a:hover::after {
+    width: 100%;
 }
-
-section h2 {
-    color: var(--primary);
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
+/* HERO */
+.hero {
     text-align: center;
+    padding: 6rem 2rem;
 }
 
-section p,
-section li {
+.hero h2 {
+    font-size: 3rem;
+    background: var(--gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: 1rem auto;
     color: var(--text-light);
-    margin-bottom: 0.8rem;
 }
 
-/* =========================
-   HERO SECTION
-========================= */
-#home {
+/* BUTTON */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 30px;
     background: var(--gradient);
     color: white;
-    text-align: center;
-    padding: 7rem 2rem;
-    border-radius: 0 0 30px 30px;
-    box-shadow: 0 10px 30px var(--shadow);
-}
-
-#home h2 {
-    color: white;
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-#home p {
-    max-width: 700px;
-    margin: 0 auto 2rem;
-    color: rgba(255,255,255,0.95);
-    font-size: 1.1rem;
-}
-
-/* =========================
-   BUTTONS
-========================= */
-button,
-.btn,
-article a {
-    display: inline-block;
-    background: var(--primary);
-    color: white;
     text-decoration: none;
-    border: none;
-    padding: 14px 28px;
-    border-radius: 10px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    margin-top: 1.5rem;
+    transition: 0.3s;
+    box-shadow: 0 5px 20px var(--shadow);
 }
 
-button:hover,
-.btn:hover,
-article a:hover {
-    background: var(--primary-dark);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px var(--shadow);
+.btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 10px 25px var(--shadow);
 }
 
-/* =========================
-   ABOUT SECTION
-========================= */
-#about {
-    background: var(--surface);
-    border-radius: 20px;
-    padding: 3rem;
-    margin-top: 3rem;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+/* SECTIONS */
+section {
+    padding: 4rem 2rem;
+    max-width: 1100px;
+    margin: auto;
 }
 
-/* =========================
-   OPPORTUNITIES SECTION
-========================= */
-#opportunities ul {
-    margin-left: 2rem;
+h2 {
+    text-align: center;
     margin-bottom: 2rem;
 }
 
-article {
-    background: white;
-    padding: 2rem;
-    margin-top: 1.5rem;
+/* CARDS */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: var(--glass);
+    backdrop-filter: blur(15px);
     border-radius: 20px;
-    border-left: 5px solid var(--primary);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.05);
-    transition: all 0.3s ease;
-}
-
-article:hover {
-    transform: translateY(-5px);
-}
-
-article h3 {
-    color: var(--primary);
-    margin-bottom: 0.75rem;
-}
-
-/* =========================
-   FORM SECTION
-========================= */
-form {
-    background: var(--surface);
-    padding: 2.5rem;
-    border-radius: 20px;
+    padding: 1.8rem;
     box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    transition: 0.3s;
 }
 
-form div {
-    margin-bottom: 1.25rem;
+.card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+/* ABOUT */
+#about {
+    background: linear-gradient(135deg, #ffe4f0, #f3e8ff);
+    border-radius: 20px;
+}
+
+/* FORM */
+form {
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    padding: 2rem;
+    border-radius: 20px;
 }
 
 label {
-    display: block;
-    margin-bottom: 0.5rem;
     font-weight: 600;
-    color: var(--text-dark);
 }
 
-input,
-select,
-textarea {
+input, textarea {
     width: 100%;
-    padding: 14px;
-    border: 1px solid var(--border);
+    padding: 12px;
+    margin: 0.5rem 0 1rem;
     border-radius: 10px;
-    font-size: 1rem;
+    border: none;
     background: white;
-    transition: all 0.3s ease;
 }
 
-textarea {
-    min-height: 150px;
-    resize: vertical;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
+input:focus, textarea:focus {
     outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 4px rgba(109, 93, 252, 0.15);
+    box-shadow: 0 0 0 3px var(--pink-soft);
 }
 
-/* =========================
-   CARDS (OPTIONAL)
-========================= */
-.card {
-    background: white;
-    padding: 2rem;
-    border-radius: 20px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.05);
-}
-
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 footer {
-    background: #1f2937;
-    color: white;
     text-align: center;
     padding: 2rem;
-    margin-top: 4rem;
-}
-
-footer p {
-    margin-bottom: 0.5rem;
-}
-
-footer a {
-    color: var(--primary-light);
-    text-decoration: none;
-    margin: 0 0.5rem;
-    transition: 0.3s ease;
-}
-
-footer a:hover {
+    background: linear-gradient(135deg, #ff7eb3, #8b7fff);
     color: white;
 }
 
-/* =========================
-   ANIMATIONS
-========================= */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-section,
-article,
-form {
-    animation: fadeIn 0.6s ease;
-}
-
-/* =========================
-   RESPONSIVE DESIGN
-========================= */
+/* RESPONSIVE */
 @media (max-width: 768px) {
-
     nav {
         flex-direction: column;
         gap: 1rem;
     }
 
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-    }
-
-    #home {
-        padding: 5rem 1.5rem;
-    }
-
-    #home h2 {
+    .hero h2 {
         font-size: 2.2rem;
-    }
-
-    section {
-        padding: 4rem 1.5rem;
-    }
-
-    section h2 {
-        font-size: 1.8rem;
-    }
-
-    form,
-    article,
-    #about {
-        padding: 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-
-    #home h2 {
-        font-size: 1.8rem;
-    }
-
-    nav h1 {
-        font-size: 1.5rem;
-    }
-
-    button,
-    .btn,
-    article a {
-        width: 100%;
-        text-align: center;
     }
 }

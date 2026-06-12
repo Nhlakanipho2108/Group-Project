@@ -1,136 +1,94 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouthHub</title>
+    <title>YouthConnect</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <!-- Navigation -->
-    <header>
-        <nav>
-            <h1>YouthConnect</h1>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#opportunities">Opportunities</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- Home Section -->
-    <main class="hero section">
-        <section id="home">
-            <h2>Connecting Talent with Opportunity</h2>
-            <p>YouthConnect helps students and young professionals find freelance work,
-                build experience, and grow their careers.
-            </p>
+<header>
+    <nav>
+        <h1>YouthConnect</h1>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#opportunities">Opportunities</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <nav>
+        <ul>
+            <li><a href="login/index.html">Login</a></li>
+            <li><a href="sign in/index.html">Sign Up</a></li>
+        </ul>
+    </nav>
+</header>
 
-            <br>
+<!-- HERO -->
+<section class="hero" id="home">
+<h2>Unlock Opportunities for Your Future</h2>
+<p>Find scholarships, internships, training programs, and career guidance designed to help young people succeed.</p>
 
-            <button>Find Work</button>
-            <button>Hire Talent</button>
+<div class="hero-buttons">
+    <a href="#opportunities" class="btn">Explore Opportunities</a>
+</div>
+</section>
 
-        </section>
+<!-- ABOUT -->
+<section id="about">
+    <h2>About Us</h2>
+    <p>
+        YouthConnect connects young people with jobs, internships, and training opportunities to help them succeed.
+    </p>
+</section>
 
-        <!-- About Section -->
-        <section id="about">
+<!-- OPPORTUNITIES -->
+<section id="opportunities">
+    <h2>Opportunities</h2>
 
-            <h2>About YouthConnect</h2>
-            <p>
-                Our mission is to bridge the gap between talent and opportunity.
-                We provide a platform where businesses can hire skilled students
-                and young professionals.
-            </p>
+    <div class="grid">
+        <div class="card">
+            <h3>Internships</h3>
+            <p>Gain real-world experience and build your future.</p>
+        </div>
 
-            <h3>How It Works</h3>
+        <div class="card">
+            <h3>Jobs</h3>
+            <p>Find job opportunities that match your skills.</p>
+        </div>
 
-            <ol>
-                <li>Create an account</li>
-                <li>Build your profile</li>
-                <li>Apply for projects</li>
-                <li>Get hired and earn money</li>
-            </ol>
+        <div class="card">
+            <h3>Training</h3>
+            <p>Learn new skills and grow professionally.</p>
+        </div>
+    </div>
+</section>
 
-        </section>
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Contact Us</h2>
 
-        <!-- Opportunities Section -->
-        <section id="opportunities">
+    <form>
+        <label>Name</label>
+        <input type="text" required>
 
-            <h2>Popular Categories</h2>
+        <label>Email</label>
+        <input type="email" required>
 
-            <ul>
-                <li>Web Development</li>
-                <li>Graphic Design</li>
-                <li>Content Writing</li>
-                <li>Digital Marketing</li>
-                <li>Data Entry</li>
-            </ul>
+        <label>Message</label>
+        <textarea required></textarea>
 
-            <article>
-                <h3>Featured Opportunity</h3>
+        <button class="btn">Send Message</button>
+    </form>
+</section>
 
-                <p>Junior Front-End Developer needed for a startup website</p>
-
-                <a href="#">View Details</a>
-            </article>
-        </section>
-
-        <!-- Contact / Registration Section -->
-        <section id="contact">
-
-            <h2>Join YouthConnect</h2>
-
-            <form>
-
-                <div>
-                    <label for="name">Full Name:</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-                </div>
-
-                <br>
-
-                <div>
-                    <label for="email">Email Address:</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                </div>
-                <br>
-
-                <div>
-                    <label for="role">Role:</label>
-                    <select id="role" name="role">
-                        <option value="">Select Role</option>
-                        <option value="freelancer">Freelancer</option>
-                        <option value="client">Client</option>
-                    </select>
-                </div>
-
-                <br>
-
-                <div>
-                    <label for="message">Tell us about yourself:</label>
-                    <textarea id="message" name="message" rows="5" cols="40"></textarea>
-                </div>
-
-                <br>
-                <button type="submit">Register</button>
-
-            </form>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 YouthConnect. All rights reserved.</p>
-
-        <a href="#">Facebook</a>|
-        <a href="#">LinkedIn</a>|
-        <a href="#">Instagram</a>
-
-    </footer>
+<footer>
+    <p>© 2026 YouthConnect | ✨Designed with The haters✨</p>
+</footer>
 
 </body>
 </html>
