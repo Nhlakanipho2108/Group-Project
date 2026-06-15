@@ -1,0 +1,354 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body {
+
+    font-family: "Inter", sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f6,
+            #fdfbff
+        );
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 2rem;
+}
+
+/* =========================
+   LOGIN CONTAINER
+========================= */
+
+.login-container {
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* =========================
+   LOGIN CARD
+========================= */
+
+.login-card {
+
+    width: 100%;
+    max-width: 450px;
+
+    background:
+        rgba(255,255,255,0.75);
+
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+
+    padding: 2.7rem;
+
+    border-radius: 28px;
+
+    border:
+        1px solid rgba(255,255,255,0.4);
+
+    box-shadow:
+        0 12px 35px rgba(255, 126, 179, 0.15);
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.login-card h1 {
+
+    text-align: center;
+
+    font-size: 2.7rem;
+
+    font-weight: 800;
+
+    margin-bottom: 0.7rem;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff7eb3,
+            #8b7fff
+        );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+}
+
+.login-card p {
+
+    text-align: center;
+
+    color: #6b7280;
+
+    line-height: 1.6;
+
+    margin-bottom: 2rem;
+}
+
+/* =========================
+   INPUT GROUPS
+========================= */
+
+.input-group {
+
+    margin-bottom: 1.4rem;
+}
+
+.input-group label {
+
+    display: block;
+
+    margin-bottom: 0.6rem;
+
+    font-weight: 600;
+
+    color: #2a2a2a;
+}
+
+.input-group input {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: white;
+
+    font-size: 1rem;
+
+    transition: 0.3s ease;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,0.04);
+}
+
+/* INPUT FOCUS */
+
+.input-group input:focus {
+
+    outline: none;
+
+    box-shadow:
+        0 0 0 4px rgba(255, 193, 221, 0.6);
+}
+
+/* =========================
+   OPTIONS
+========================= */
+
+.options {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 1.5rem;
+
+    font-size: 0.95rem;
+}
+
+.remember-me {
+
+    display: flex;
+    align-items: center;
+
+    gap: 0.5rem;
+
+    color: #555;
+}
+
+.options a {
+
+    text-decoration: none;
+
+    color: #ff7eb3;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.options a:hover {
+
+    color: #8b7fff;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff7eb3,
+            #8b7fff
+        );
+
+    color: white;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+
+    box-shadow:
+        0 8px 20px rgba(255, 126, 179, 0.2);
+}
+
+button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 14px 28px rgba(255, 126, 179, 0.3);
+}
+
+/* =========================
+   DIVIDER
+========================= */
+
+.divider {
+
+    display: flex;
+    align-items: center;
+
+    margin: 2rem 0;
+}
+
+.divider::before,
+.divider::after {
+
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #f1d4e4;
+}
+
+.divider span {
+
+    margin: 0 1rem;
+
+    color: #6b7280;
+
+    font-size: 0.9rem;
+}
+
+/* =========================
+   GOOGLE BUTTON
+========================= */
+
+.google-btn {
+
+    background: white;
+
+    color: #2a2a2a;
+
+    border:
+        1px solid #f1d4e4;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,0.04);
+}
+
+.google-btn:hover {
+
+    background: #fafafa;
+}
+
+/* =========================
+   EXTRA LINKS
+========================= */
+
+.extra-links {
+
+    margin-top: 1.8rem;
+
+    text-align: center;
+}
+
+.extra-links a {
+
+    color: #ff7eb3;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.extra-links a:hover {
+
+    color: #8b7fff;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 500px) {
+
+    .login-card {
+
+        padding: 2rem;
+    }
+
+    .login-card h1 {
+
+        font-size: 2.2rem;
+    }
+
+    .options {
+
+        flex-direction: column;
+
+        gap: 1rem;
+
+        align-items: flex-start;
+    }
+
+}
