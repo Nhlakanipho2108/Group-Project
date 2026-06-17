@@ -74,13 +74,13 @@ body {
     padding: 1.2rem 6%;
 
     background:
-        rgba(255, 255, 255, 0.7);
+        rgb(255, 255, 255);
 
     -webkit-backdrop-filter: blur(14px);
     backdrop-filter: blur(14px);
 
     border-bottom:
-        1px solid rgba(255,255,255,0.3);
+        1px solid rgb(255, 255, 255);
 
     z-index: 1000;
 }
@@ -223,6 +223,50 @@ body {
     gap: 1rem;
 
     flex-wrap: wrap;
+}
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 2rem;
+    border-radius: 20px;
+}
+/* HERO IMAGE */
+
+.hero-image {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    width: 180px;
+    height: 180px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 10px 30px rgba(255, 126, 179, 0.2);
+
+    animation: floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 /* =========================
@@ -709,4 +753,178 @@ footer {
         font-size: 2rem;
     }
 
+}
+.opportunity-card i {
+  font-size: 2rem;
+
+  color: var(--accent);
+
+  margin-bottom: 15px;
+
+  display: block;
+}
+
+.opportunity-card {
+  text-align: center;
+}
+
+/* =========================
+   NAVBAR COMPONENT (TRANSPARENT GLASS)
+========================= */
+.navbar {
+    position: fixed; /* Changed to fixed so it floats seamlessly over your content */
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 6%;
+    
+    /* Transparent Background with Glassmorphism Blur Effect */
+    background: rgba(255, 255, 255, 0.15); 
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    
+    /* Subtly separate nav from content without a harsh solid line */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25); 
+    z-index: 1000;
+    transition: background 0.3s ease;
+}
+
+/* Ensure your page content doesn't get hidden behind the fixed transparent navbar */
+body {
+    padding-top: 80px; 
+}
+
+/* LOGO */
+
+.logo {
+    font-size: 2rem;
+
+    font-weight: 800;
+
+    background: linear-gradient(
+        90deg,
+        #ff6fb5,
+        #8b6cf6
+    );
+
+    background-clip: text;
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    cursor: pointer;
+}
+
+/* NAV LINKS */
+
+.nav-links {
+    display: flex;
+
+    gap: 50px;
+
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+
+    color: #222;
+
+    font-weight: 600;
+
+    font-size: 1.1rem;
+
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #8b6cf6;
+}
+
+/* BUTTONS */
+
+.nav-buttons {
+    display: flex;
+
+    gap: 20px;
+}
+
+.login-btn,
+.signup-btn {
+    text-decoration: none;
+
+    padding: 14px 35px;
+
+    border-radius: 50px;
+
+    font-weight: 700;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #e56fb5,
+        #8b6cf6
+    );
+
+    transition: 0.3s ease;
+}
+
+.login-btn:hover,
+.signup-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 20px rgba(139, 108, 246, 0.3);
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        flex-direction: column;
+
+        gap: 20px;
+
+        padding: 25px;
+    }
+
+    .nav-links {
+        gap: 25px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .nav-buttons {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+}
+
+/* ICONS */
+
+.opportunity-card i {
+
+    font-size: 2.2rem;
+
+    margin-bottom: 18px;
+
+    background: linear-gradient(
+        135deg,
+        #e56fb5,
+        #8b6cf6
+    );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    display: block;
 }
