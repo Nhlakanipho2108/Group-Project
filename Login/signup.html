@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | YouthConnect</title>
+    <link rel="stylesheet" href="signup.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-clean-slate">
+
+    <!-- Minimalistic Layout Navigation Header -->
+    <nav class="auth-nav">
+        <a href="./upwork-index.html" class="brand-logo">Youth<span class="text-accent">Connect</span></a>
+        <p class="auth-nav-text">Already have an account? <a href="./login.html">Log In</a></p>
+    </nav>
+
+    <!-- Sign Up Form Wrapper -->
+    <main class="auth-container">
+        <div class="auth-card">
+            
+            <div class="auth-header">
+                <h2>Join as a client or freelancer</h2>
+                <p>Select how you would like to utilize the platform ecosystem.</p>
+            </div>
+
+            <!-- Role Selector Cards -->
+            <div class="role-selector-grid">
+                
+                <label class="role-card-label">
+                    <input type="radio" name="user-role" value="client" class="hidden-radio" checked>
+                    <div class="role-card-custom">
+                        <div class="role-icon-row">
+                            <i class="fa-solid fa-briefcase role-main-icon"></i>
+                            <div class="custom-radio-dot"></div>
+                        </div>
+                        <h4>I am a client, hiring for a project</h4>
+                    </div>
+                </label>
+
+                <label class="role-card-label">
+                    <input type="radio" name="user-role" value="freelancer" class="hidden-radio">
+                    <div class="role-card-custom">
+                        <div class="role-icon-row">
+                            <i class="fa-solid fa-laptop-code role-main-icon"></i>
+                            <div class="custom-radio-dot"></div>
+                        </div>
+                        <h4>I am a freelancer, looking for work</h4>
+                    </div>
+                </label>
+
+            </div>
+
+            <!-- Programmatic Registration Form -->
+            <form class="auth-form" action="#" method="POST">
+                
+                <div class="form-row-dual">
+                    <div class="form-group">
+                        <label for="first-name">First name</label>
+                        <input type="text" id="first-name" required placeholder="John">
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last name</label>
+                        <input type="text" id="last-name" required placeholder="Doe">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Work email address</label>
+                    <input type="email" id="email" required placeholder="you@company.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password (8 or more characters)</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="password" required placeholder="Password">
+                        <i class="fa-solid fa-eye-slash toggle-password-visibility"></i>
+                    </div>
+                </div>
+
+                <div class="form-group-checkbox">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">Yes, I understand and agree to the <a href="#">YouthConnect Terms of Service</a>, including the <a href="#">User Agreement</a> and <a href="#">Privacy Policy</a>.</label>
+                </div>
+
+                <button type="submit" class="btn-auth-submit">Create My Account</button>
+
+                <!-- Social Sign-On Divider -->
+                <div class="auth-divider">
+                    <span>or continue with</span>
+                </div>
+
+                <!-- OAuth Social Providers Buttons -->
+                <div class="oauth-buttons-row">
+                    <button type="button" class="btn-oauth"><i class="fa-brands fa-google text-google"></i> Google</button>
+                    <button type="button" class="btn-oauth"><i class="fa-brands fa-apple text-apple"></i> Apple</button>
+                </div>
+
+            </form>
+
+        </div>
+    </main>
+
+    <script src="signup.js"></script>
+
+</body>
+</html>
