@@ -1,49 +1,79 @@
-document
-  .getElementById("signupForm")
-  .addEventListener("submit", function (event) {
+// SIGN UP FORM
 
-    event.preventDefault();
+const signupForm =
+  document.getElementById("signupForm");
 
-    // Inputs
-    const username =
-      document
-        .getElementById("username")
-        .value
-        .trim();
+if (signupForm) {
 
-    const email =
-      document
-        .getElementById("email")
-        .value
-        .trim();
+  signupForm.addEventListener(
+    "submit",
+    function (e) {
 
-    const password =
-      document
-        .getElementById("password")
-        .value
-        .trim();
+      e.preventDefault();
 
-    // Save user info
-    localStorage.setItem(
-      "username",
-      username
-    );
+      // GET INPUT VALUES
+      const username =
+        document
+          .getElementById("username")
+          .value
+          .trim();
 
-    localStorage.setItem(
-      "email",
-      email
-    );
+      const email =
+        document
+          .getElementById("email")
+          .value
+          .trim();
 
-    localStorage.setItem(
-      "password",
-      password
-    );
+      const password =
+        document
+          .getElementById("password")
+          .value
+          .trim();
 
-    // Success message
-    alert("Account created successfully!");
+      // CHECK IF FIELDS ARE EMPTY
+      if (
+        username === "" ||
+        email === "" ||
+        password === ""
+      ) {
 
-    // Redirect to login page
-    window.location.href =
-      "../Login/index.html";
+        alert(
+          "Please fill in all fields."
+        );
 
-});
+        return;
+      }
+
+      // SAVE USER DATA
+      localStorage.setItem(
+        "username",
+        username
+      );
+
+      localStorage.setItem(
+        "email",
+        email
+      );
+
+      localStorage.setItem(
+        "password",
+        password
+      );
+
+      // LOGIN STATUS
+      localStorage.setItem(
+        "loggedIn",
+        "true"
+      );
+
+      // SUCCESS MESSAGE
+      alert(
+        "Account created successfully!"
+      );
+
+      // REDIRECT
+      window.location.href =
+        "../Login/index.html";
+    }
+  );
+}

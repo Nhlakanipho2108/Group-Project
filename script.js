@@ -1,118 +1,94 @@
-const authButtons = document.getElementById("authButtons");
-const profileMenu = document.getElementById("profileMenu");
+/* =========================
+   ELEMENTS
+========================= */
 
-const profileToggle = document.getElementById("profileToggle");
-const dropdown = document.getElementById("dropdown");
+const authButtons =
+  document.getElementById("authButtons");
 
-const logoutBtn = document.getElementById("logoutBtn");
+const profileMenu =
+  document.getElementById("profileMenu");
 
-/* SIMULATE LOGIN */
+const profileToggle =
+  document.getElementById("profileToggle");
 
-function loginUser() {
+const dropdown =
+  document.getElementById("dropdown");
 
-  authButtons.classList.add("hidden");
+/* =========================
+   PAGE LOAD
+========================= */
 
-  profileMenu.classList.remove("hidden");
-}
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
 
-/* TOGGLE DROPDOWN */
+    const isLoggedIn =
+      localStorage.getItem("loggedIn");
 
-profileToggle.addEventListener("click", () => {
-  dropdown.classList.toggle("hidden");
-});
+    const username =
+      localStorage.getItem("username");
 
-/* LOGOUT */
+    /* USER LOGGED IN */
 
-logoutBtn.addEventListener("click", () => {
+    if (
+      isLoggedIn === "true" &&
+      username
+    ) {
 
-  profileMenu.classList.add("hidden");
+      const userProfile = document.createElement("div");
+      userProfile.className = "user-profile";
 
-  authButtons.classList.remove("hidden");
+      const userNameSpan = document.createElement("span");
+      userNameSpan.className = "user-name";
+      userNameSpan.textContent = `👋 ${username}`;
 
-  dropdown.classList.add("hidden");
-});
+      const logoutButton = document.createElement("button");
+      logoutButton.className = "logout-navbar-btn";
+      logoutButton.textContent = "Logout";
+      logoutButton.addEventListener("click", logout);
 
-/* DEMO AUTO LOGIN */
-/* REMOVE THIS LATER */
+      userProfile.append(userNameSpan, logoutButton);
+      authButtons.innerHTML = "";
+      authButtons.append(userProfile);
 
-loginUser();
+    }
 
-document.addEventListener("DOMContentLoaded", () => {
+    /* OPTIONAL PROFILE MENU */
 
-  // Check login status
-  const isLoggedIn =
-    localStorage.getItem("loggedIn");
+    if (
+      profileToggle &&
+      dropdown
+    ) {
 
-  // If not logged in
-  if (isLoggedIn !== "true") {
+      profileToggle.addEventListener(
+        "click",
+        () => {
 
-    // Redirect to login page
-    window.location.href =
-      "Login/index.html";
+          dropdown.classList.toggle(
+            "hidden"
+          );
+
+        }
+      );
+
+    }
 
   }
+);
 
-});
+/* =========================
+   LOGOUT
+========================= */
 
-
-// Logout function
 function logout() {
 
-  // Remove session
-  localStorage.removeItem("loggedIn");
+  localStorage.removeItem(
+    "loggedIn"
+  );
 
-  // Redirect to login
-  window.location.href =
-    "Login/index.html";
-
-}
-document.addEventListener("DOMContentLoaded", () => {
-
-  const authButtons =
-    document.getElementById("authButtons");
-
-  // Get stored username
-  const username =
-    localStorage.getItem("username");
-
-  const isLoggedIn =
-    localStorage.getItem("loggedIn");
-
-  // If logged in
-  if (
-    isLoggedIn === "true" &&
-    username
-  ) {
-
-    authButtons.innerHTML = `
-
-      <div class="user-profile">
-
-        <span class="user-name">
-          👋 ${username}
-        </span>
-
-        <button
-          class="logout-btn"
-          onclick="logout()"
-        >
-          Logout
-        </button>
-
-      </div>
-
-    `;
-  }
-
-});
-
-
-// Logout function
-function logout() {
-
-  localStorage.removeItem("loggedIn");
-
-  localStorage.removeItem("username");
+  localStorage.removeItem(
+    "username"
+  );
 
   window.location.href =
     "Login/index.html";
