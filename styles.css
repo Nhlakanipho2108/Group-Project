@@ -922,9 +922,165 @@ body {
         #8b6cf6
     );
 
+    background-clip: text;
     -webkit-background-clip: text;
 
     -webkit-text-fill-color: transparent;
 
     display: block;
+}
+/* =========================
+   PROFILE MENU
+========================= */
+
+.profile-menu {
+    position: relative;
+}
+
+/* PROFILE ICON BUTTON */
+
+.profile-toggle {
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.18);
+
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+
+    border:
+        1px solid rgba(255,255,255,0.3);
+
+    color: white;
+
+    font-size: 1.1rem;
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.3s ease;
+
+    box-shadow:
+        0 8px 20px rgba(139, 108, 246, 0.18);
+}
+
+.profile-toggle:hover {
+    transform: translateY(-3px);
+
+    background:
+        rgba(255,255,255,0.28);
+
+    box-shadow:
+        0 12px 28px rgba(139, 108, 246, 0.25);
+}
+
+/* =========================
+   DROPDOWN MENU
+========================= */
+
+.dropdown {
+    position: absolute;
+
+    top: 65px;
+    right: 0;
+
+    width: 240px;
+
+    background:
+        rgba(255,255,255,0.82);
+
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+
+    border:
+        1px solid rgba(255,255,255,0.45);
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 20px 40px rgba(139, 108, 246, 0.18);
+
+    animation: dropdownFade 0.25s ease;
+}
+
+/* LINKS + BUTTONS */
+
+.dropdown a,
+.dropdown button {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 1rem 1.3rem;
+
+    border: none;
+
+    background: transparent;
+
+    text-decoration: none;
+
+    color: #222;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+/* ICONS */
+
+.dropdown i {
+    color: #8b6cf6;
+
+    font-size: 1rem;
+}
+
+/* HOVER */
+
+.dropdown a:hover,
+.dropdown button:hover {
+    background:
+        rgba(229, 111, 181, 0.08);
+
+    padding-left: 1.5rem;
+}
+
+/* HIDDEN */
+
+.hidden {
+    display: none;
+}
+
+/* ANIMATION */
+
+@keyframes dropdownFade {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(-10px)
+            scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
 }

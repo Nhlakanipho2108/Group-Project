@@ -1,14 +1,49 @@
+document
+  .getElementById("signupForm")
+  .addEventListener("submit", function (event) {
 
-document.querySelector("form").addEventListener("submit", function(event) {
     event.preventDefault();
 
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
+    // Inputs
+    const username =
+      document
+        .getElementById("username")
+        .value
+        .trim();
 
-    if(email && password) {
-        alert("Login successful!");
-        window.location.href = "index.html";
-    } else {
-        alert("Please fill in all fields.");
-    }
+    const email =
+      document
+        .getElementById("email")
+        .value
+        .trim();
+
+    const password =
+      document
+        .getElementById("password")
+        .value
+        .trim();
+
+    // Save user info
+    localStorage.setItem(
+      "username",
+      username
+    );
+
+    localStorage.setItem(
+      "email",
+      email
+    );
+
+    localStorage.setItem(
+      "password",
+      password
+    );
+
+    // Success message
+    alert("Account created successfully!");
+
+    // Redirect to login page
+    window.location.href =
+      "../Login/index.html";
+
 });

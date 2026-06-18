@@ -1,16 +1,36 @@
-document.getElementById("signupForm").addEventListener("submit", function(event) {
+document
+  .getElementById("loginForm")
+  .addEventListener("submit", function (event) {
+
     event.preventDefault();
 
-    const password = document.getElementById("password").value;
-    const confirmPassword = document.getElementById("confirmPassword").value;
+    const email =
+      document.getElementById("email").value;
 
-    if (password !== confirmPassword) {
-        alert("Passwords do not match!");
-        return;
+    const password =
+      document.getElementById("password").value;
+
+    // Demo login
+    if (
+      email === "admin@gmail.com" &&
+      password === "1234"
+    ) {
+
+      // save login session
+      localStorage.setItem("loggedIn", "true");
+
+      // redirect
+      window.location.href = "../opportunities.html";
+
+    } else {
+
+      alert("Invalid email or password");
+
     }
 
-    alert("Account created successfully!");
-    
-    // Redirect to login page
-    window.location.href = "login.html";
 });
+
+      localStorage.setItem(
+  "username",
+  email
+);

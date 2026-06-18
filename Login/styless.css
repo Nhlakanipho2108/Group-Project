@@ -352,3 +352,32 @@ button:hover {
     }
 
 }
+
+.user-profile {
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+}
+
+.user-name {
+
+  font-weight: 600;
+  color: #7b2cbf;
+
+}
+
+.logout-btn {
+
+  padding: 10px 18px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #7b2cbf;
+  color: white;
+
+  cursor: pointer;
+
+}
