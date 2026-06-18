@@ -1,209 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opportunities | YouthConnect</title>
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
-
-  <title>Opportunities</title>
-
-  <link
-    rel="stylesheet"
-    href="styles.css"
-  />
-
-  <!-- FONT AWESOME ICONS -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="opportunities.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
 
-<nav class="navbar">
+    <!-- HEADER -->
+    <header class="navbar">
 
-    <!-- LOGO -->
-    <div class="logo">
-        YouthConnect
+        <div class="logo">
+            <h1>YouthConnect</h1>
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a class="active" href="opportunities.html">Opportunities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="auth-buttons">
+            <a href="Login/login.html" class="login-btn">
+                Login
+            </a>
+
+            <a href="Login/signup.html" class="signup-btn">
+                Sign Up
+            </a>
+        </div>
+
+    </header>
+
+<!-- PAGE HEADER -->
+<section class="opportunities-hero">
+    <h2>Find Opportunities That Match Your Skills</h2>
+    <p>Browse internships, freelance gigs, and entry-level jobs designed for young professionals.</p>
+</section>
+
+<!-- SEARCH BAR -->
+<section class="search-section">
+    <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Search opportunities, skills, or companies..." />
+        <button>Search</button>
     </div>
+</section>
 
-    <!-- NAV LINKS -->
-    <ul class="nav-links">
+<!-- MAIN LAYOUT -->
+<div class="opportunities-container">
 
-        <li>
-            <a href="index.html">Home</a>
-        </li>
+    <!-- FILTERS -->
+    <aside class="filters">
+        <h3><i class="fa-solid fa-filter"></i> Filters</h3>
 
-        <li>
-            <a href="about.html">About</a>
-        </li>
+        <div class="filter-group">
+            <h4>Type</h4>
+            <label><input type="checkbox"> Internship</label>
+            <label><input type="checkbox"> Freelance</label>
+            <label><input type="checkbox"> Full-Time</label>
+        </div>
 
-        <li>
-            <a href="opportunities.html">Opportunities</a>
-        </li>
+        <div class="filter-group">
+            <h4>Experience</h4>
+            <label><input type="checkbox"> Entry Level</label>
+            <label><input type="checkbox"> Intermediate</label>
+            <label><input type="checkbox"> Expert</label>
+        </div>
 
-        <li>
-            <a href="contact.html">Contact</a>
-        </li>
+        <div class="filter-group">
+            <h4>Location</h4>
+            <label><input type="checkbox"> Remote</label>
+            <label><input type="checkbox"> On-site</label>
+        </div>
+    </aside>
 
-    </ul>
+    <!-- JOB LIST -->
+    <main class="job-list">
 
-    <!-- BUTTONS -->
-    <div class="nav-buttons">
+        <!-- CARD 1 -->
+        <div class="job-card featured">
+            <span class="badge">Featured</span>
+            <h3>Frontend Developer Internship</h3>
+            <p>Build modern UI interfaces using React for a fast-growing startup.</p>
 
-        <a href="#" class="login-btn">
-            Login
-        </a>
+            <div class="tags">
+                <span>React</span>
+                <span>JavaScript</span>
+                <span>UI Design</span>
+            </div>
 
-        <a href="#" class="signup-btn">
-            Sign Up
-        </a>
+            <div class="job-footer">
+                <span>Remote • Paid</span>
+                <button class="apply-btn">Apply</button>
+            </div>
+        </div>
 
-    </div>
+        <!-- CARD 2 -->
+        <div class="job-card">
+            <h3>Graphic Design Freelancer</h3>
+            <p>Create branding assets, social media posts, and marketing visuals.</p>
 
-</nav>
-<!-- PROFILE MENU -->
-<div class="profile-menu hidden" id="profileMenu">
+            <div class="tags">
+                <span>Figma</span>
+                <span>Photoshop</span>
+            </div>
 
-    <button class="profile-toggle" id="profileToggle">
-        <i class="fa-solid fa-user"></i>
-    </button>
+            <div class="job-footer">
+                <span>Project Based</span>
+                <button class="apply-btn">Apply</button>
+            </div>
+        </div>
 
-    <div class="dropdown hidden" id="dropdown">
+        <!-- CARD 3 -->
+        <div class="job-card">
+            <h3>Content Writing Internship</h3>
+            <p>Write blog posts and SEO content for digital marketing campaigns.</p>
 
-        <a href="#">
-            <i class="fa-solid fa-user"></i>
-            My Profile
-        </a>
+            <div class="tags">
+                <span>Writing</span>
+                <span>SEO</span>
+            </div>
 
-        <a href="#">
-            <i class="fa-solid fa-gear"></i>
-            Settings
-        </a>
+            <div class="job-footer">
+                <span>Remote</span>
+                <button class="apply-btn">Apply</button>
+            </div>
+        </div>
 
-        <button id="logoutBtn">
-            <i class="fa-solid fa-right-from-bracket"></i>
-            Logout
-        </button>
-
-    </div>
-
+    </main>
 </div>
-
-  <!-- OPPORTUNITIES SECTION -->
-  <section
-    class="opportunities-section"
-    id="opportunities"
-  >
-
-    <!-- SECTION HEADING -->
-    <div class="section-heading">
-
-      <h2>
-        Explore Opportunities
-      </h2>
-
-      <p>
-        Everything you need to start building your future.
-      </p>
-
-    </div>
-
-    <!-- TOP CARDS -->
-    <div class="cards-container">
-
-      <div class="card">
-
-        <h3>Internships</h3>
-
-        <p>
-          Gain practical experience and workplace exposure
-          through hands-on opportunities.
-        </p>
-
-      </div>
-
-      <div class="card">
-
-        <h3>Jobs</h3>
-
-        <p>
-          Discover youth-friendly employment opportunities
-          across different industries.
-        </p>
-
-      </div>
-
-      <div class="card">
-
-        <h3>Training</h3>
-
-        <p>
-          Learn in-demand skills through professional
-          development programmes.
-        </p>
-
-      </div>
-
-    </div>
-
-    <!-- OPPORTUNITY GRID -->
-    <div class="opportunity-grid">
-
-      <div class="opportunity-card">
-        <i class="fa-solid fa-robot"></i>
-        <h3>AI Services</h3>
-      </div>
-
-      <div class="opportunity-card">
-        <i class="fa-solid fa-code"></i>
-        <h3>Development & IT</h3>
-      </div>
-
-      <div class="opportunity-card">
-        <i class="fa-solid fa-palette"></i>
-        <h3>Design & Creative</h3>
-      </div>
-
-      <div class="opportunity-card">
-        <i class="fa-solid fa-chart-line"></i>
-        <h3>Sales & Marketing</h3>
-      </div>
-
-      <div class="opportunity-card">
-        <i class="fa-solid fa-pen-nib"></i>
-        <h3>Writing & Translation</h3>
-      </div>
-
-      <div class="opportunity-card">
-        <i class="fa-solid fa-user-tie"></i>
-        <h3>Admin & Support</h3>
-      </div>
-
-      <div class="opportunity-card">
-        <i class="fa-solid fa-building-columns"></i>
-        <h3>Finance & Accounting</h3>
-      </div>
-
-      <div class="opportunity-card">
-        <i class="fa-solid fa-scale-balanced"></i>
-        <h3>Legal</h3>
-      </div>
-
-      <div class="opportunity-card">
-        <i class="fa-solid fa-users"></i>
-        <h3>HR & Training</h3>
-      </div>
-
-      <div class="opportunity-card">
-        <i class="fa-solid fa-screwdriver-wrench"></i>
-        <h3>Engineering & Architecture</h3>
-      </div>
-
-    </div>
-
-  </section>
 
 </body>
 </html>
